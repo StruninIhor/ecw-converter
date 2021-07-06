@@ -6,7 +6,7 @@ mkdir logs
 
 mkdir zip && mv *.zip zip && cd zip
 echo -e "\nUnzipping files"
-ls *.zip | xargs -n1 '-I{}' sh -c 'echo {}; lbunzip2 {}' &> ../logs/unzip.log
+ls *.zip | xargs -n1 '-I{}' sh -c 'echo {}; lbunzip2 -k {}' &> ../logs/unzip.log
 
 cd .. && mkdir ecw && mv zip/*.ecw ecw && mkdir tif
 echo -e "\nGenerating Geotiff & COG files using ecw_convert_2_cog.py"
